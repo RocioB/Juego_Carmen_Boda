@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
 		var forceY = 0f;
 		
 		//Calculate Velocity X
-		if (Input.GetKey("right"))
+		if (Input.GetKey("d"))
 		{
 			//Esto lo que hace es frenar cuando voy a la izquierda y pulso la derecha
 			if (rigidbody2D.velocity.x < 0) {
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour {
 			//Esto pone el sprite mirando a la derecha
 			this.transform.localScale = new Vector3 (1,1,1);
 		}
-		else if (Input.GetKey("left"))
+		else if (Input.GetKey("a"))
 		{
 			//Esto lo que hace es frenar cuando voy a la derecha y pulso la izquierda
 			if (rigidbody2D.velocity.x > 0) {
@@ -50,16 +50,16 @@ public class Player : MonoBehaviour {
 
 		rigidbody2D.AddForce (new Vector2 (forceX, forceY));
 
-
+		/*
 		if (Input.GetKey ("c")) {
 						animator.SetBool ("fire", true);
 
 				} else {
 						animator.SetBool ("fire", false);
 				}
-
+*/
 
 		
 		
-	}
+	} 
 }
