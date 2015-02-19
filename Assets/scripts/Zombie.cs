@@ -9,6 +9,7 @@ public class Zombie : MonoBehaviour {
 	private bool veosuelo = true;
 	private bool alterado = false;
 	private Vector2  direction;
+	public float distanciavision=2;
 	
 	
 	private float vAbs;
@@ -39,7 +40,7 @@ public class Zombie : MonoBehaviour {
 	
 	void gira_si_no_avanza(){
 		vAbs =  Mathf.Abs (rigidbody2D.velocity.x);
-		if(vAbs < 0.1f && !alterado){
+		if(vAbs < 0.2f && !alterado){
 			if(tiempo_espera == 0){
 				tiempo_espera = Time.time + 3;
 			}else if(tiempo_espera < Time.time){
@@ -67,8 +68,8 @@ public class Zombie : MonoBehaviour {
 	void busca_player(){
 		direction  = checkMuros.position-transform.position;
 		var ray = new Ray2D(transform.position,direction.normalized);
-		//Debug.DrawRay(ray.origin, ray.direction*2);
-		var hit = Physics2D.Raycast(ray.origin, ray.direction,2, 1 << LayerMask.NameToLayer ("Player"));
+		Debug.DrawRay(ray.origin, ray.direction*distanciavision);
+		var hit = Physics2D.Raycast(ray.origin, ray.direction,distanciavision, 1 << LayerMask.NameToLayer ("Player"));
 		if (hit.collider != null && hit.transform.tag == "Player") {
 			velocidad = speedAlterado;
 			alterado =true;
