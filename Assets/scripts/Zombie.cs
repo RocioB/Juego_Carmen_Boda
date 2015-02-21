@@ -43,7 +43,7 @@ public class Zombie : MonoBehaviour {
 		//if(vAbs < 0.2f && !alterado){
 		if(vAbs < 0.2f ){
 			if(tiempo_espera == 0){
-				tiempo_espera = Time.time + 3;
+				tiempo_espera = Time.time + 1;
 			}else if(tiempo_espera < Time.time){
 				tiempo_espera = 0;
 				mediavuelta();
