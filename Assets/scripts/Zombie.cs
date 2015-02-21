@@ -40,7 +40,8 @@ public class Zombie : MonoBehaviour {
 	
 	void gira_si_no_avanza(){
 		vAbs =  Mathf.Abs (rigidbody2D.velocity.x);
-		if(vAbs < 0.2f && !alterado){
+		//if(vAbs < 0.2f && !alterado){
+		if(vAbs < 0.2f ){
 			if(tiempo_espera == 0){
 				tiempo_espera = Time.time + 3;
 			}else if(tiempo_espera < Time.time){
