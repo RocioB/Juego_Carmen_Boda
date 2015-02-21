@@ -11,7 +11,7 @@ public class hachazo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButtonDown(0)) {
+		if(Input.GetMouseButtonDown(0)||Input.GetKey(KeyCode.RightControl)||Input.GetKey(KeyCode.LeftControl)) {
 			animator.SetBool ("Hachazo", true);
 			
 		} else {
