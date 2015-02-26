@@ -8,7 +8,7 @@ public class nextLevel : MonoBehaviour {
 		public float tiempoEspera=3f;
 
 	void OnTriggerStay2D (Collider2D target) {
-
+		Debug.Log ("dentro");
 				if (target.transform.tag == "Player") {
 						if (!cargando) {
 				StartCoroutine(cargaNivel());
